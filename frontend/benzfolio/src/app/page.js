@@ -1,6 +1,11 @@
 import Image from "next/image";
 
 export default function Home() {
+  let quotes = ["A dream is a wish your heart makes", 
+    "The history of evolution has taught us is that life will not be contained.", 
+    "A mind needs books as a sword needs a whetstone, if it to keep its edge.", 
+    "What is a game? It's tomorrow, and tomorrow, and tomorrow. It's the possibility of infinite rebirth, infinite redemption."]
+
   return (
     <div className="grid grid-rows-[36px_1fr_94px] items-center overflow-auto bg-white sm:pt-6 font-sans">
       <div className="relative bg-blue-500 sm:pl-6 sm:pr-6">
@@ -19,12 +24,23 @@ export default function Home() {
 
       </div>
 
-      <div className="p-4 pt-40 sm:pl-6 sm:pr-6">
-        <div className="pb-12">
-          <h1 className="text-4xl font-bold py-2">Hey, I'm Mercedes!</h1>
+      <div className="p-4 pt-60 sm:pl-6 sm:pr-6">
+        <div className="pb-32">
+          <h1 className="text-5xl font-bold py-2">Hello, I'm Mercedes!</h1>
           <p className="font-medium py-2">A full stack developer and aspiring computer science student</p>
-          <p className="font-medium">@TheUniversityOfTexasAtDallas</p>
+          <div className="flex items-center space-x-2">
+            <p className="font-medium">@TheUniversityOfTexasAtDallas</p>
+            <Image
+              src="/Comet.svg"  // Path to your image (must be in the 'public' folder)
+              alt="comet" 
+              width={28}  // Set width
+              height={28} // Set height
+              className="relative"          
+            />
+          </div>
+
           <div className="flex py-4 space-x-6">
+            <a href="https://github.com/MercedesX3" target="_blank">
             <Image
               src="/github 1.svg"  // Path to your image (must be in the 'public' folder)
               alt="githubLogo" 
@@ -32,6 +48,8 @@ export default function Home() {
               height={28} // Set height
               className="" // Tailwind classes for styling
             />
+            </a>
+            <a href="https://www.linkedin.com/in/mercedes-xiong-2900b2296/" target="_blank">
             <Image
             src="/linkedin 1.svg"  // Path to your image (must be in the 'public' folder)
             alt="linkedinLogo" 
@@ -39,19 +57,40 @@ export default function Home() {
             height={28} // Set height
             className="" // Tailwind classes for styling
             />
+            </a>
         </div>
         </div>
 
         <div className="flex justify-center space-x-24 px-16 pb-32">
-          <div className="h-72 w-1/4 rounded-[20px] bg-purple-100">
+          <div className="h-80 w-1/5 rounded-[20px] bg-[#C4BEEE] pt-8 px-4 justify-between">
+            <p className="font-semibold text-3xl text-white text-center">Lumina</p>
+            <p className="font-medium text-white text-center pt-2">simplifying the exploration of the magic of stargazing</p>
+            <Image
+            src="/luminaphone.svg"  // Path to your image (must be in the 'public' folder)
+            alt="Lumina Screen" 
+            width={100}
+            height={56}
+            className="w-1/2 h-auto mx-auto pt-8" 
+            />
+          </div>
+
+          <div className="h-80 w-1/5 rounded-[20px] mt-28 bg-[#EDDCF1] pt-8 px-4 justify-between">
+          <p className="font-semibold text-3xl text-white text-center">Drafter</p>
+            <p className="font-medium text-white text-center pt-2">analyzing nfl player statistics to predict future stats</p>
+          </div>
+          <div className="h-80 w-1/5 rounded-[20px] mt-52 bg-[#DFDCEE] pt-8 px-4 justify-between">
+          <p className="font-semibold text-3xl text-white text-center">Rexpense</p>
+            <p className="font-medium text-white text-center pt-2">encouraging the youth to manage wealth with data analytics</p>
 
           </div>
-          <div className="h-72 w-1/4 rounded-[20px] mt-12 bg-purple-100">
+        </div>
 
-          </div>
-          <div className="h-72 w-1/4 rounded-[20px] mt-24 bg-purple-100">
+        <div className="flex flex-row bg-gradient-to-r from-purple-400 via-purple-500 to-gray-300 inline-block text-transparent bg-clip-text">
+          <p className="font-medium">{quotes[0]}</p>
+          <p className="font-medium">{quotes[1]}</p>
+          <p className="font-medium">{quotes[2]}</p>
+          <p className="font-medium">{quotes[3]}</p>
 
-          </div>
         </div>
       </div>
 
@@ -59,9 +98,9 @@ export default function Home() {
         <div className="flex h-[96px] w-full items-center justify-between px-14">
           <p>@2025 Mercedes Xiong</p>
           <div className="flex space-x-6">
-            <p>Github</p>
-            <p>LinkedIn</p>
-            <p>Contact Me</p>    
+            <a href="https://github.com/MercedesX3" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/mercedes-xiong-2900b2296/" target="_blank">LinkedIn</a>
+            <a>Contact Me</a>    
           </div>      
         </div>
       </div>
