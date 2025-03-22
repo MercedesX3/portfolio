@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  let quotes = ["A dream is a wish your heart makes", 
+  let quotes = ["There is no prize to perfection. Only an end to pursuit.", 
     "The history of evolution has taught us is that life will not be contained.", 
-    "A mind needs books as a sword needs a whetstone, if it to keep its edge.", 
+    "A mind needs books as a sword needs a whetstone.", 
     "What is a game? It's tomorrow, and tomorrow, and tomorrow. It's the possibility of infinite rebirth, infinite redemption."]
 
   return (
@@ -17,8 +18,8 @@ export default function Home() {
           className="absolute" // Tailwind classes for styling
         />
         <div className="absolute left-1/2 -translate-x-1/2 w-1/3 h-full text-center p-4 flex items-center justify-center space-x-8 rounded-full shadow-[0px_4px_20px_#C1BBE1]">
-          <p className="text-sm font-bold">Work</p>
-          <p className="text-sm font-bold">About</p>
+          <Link className="text-sm font-bold" href="/work">Work</Link> {/* This navigates to the new page */}
+          <Link className="text-sm font-bold" href="/about">About</Link>
           <p className="text-sm font-bold">Resume</p>
         </div>
 
@@ -62,36 +63,46 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center space-x-24 px-16 pb-32">
-          <div className="h-80 w-1/5 rounded-[20px] bg-[#C4BEEE] pt-8 px-4 justify-between">
-            <p className="font-semibold text-3xl text-white text-center">Lumina</p>
-            <p className="font-medium text-white text-center pt-2">simplifying the exploration of the magic of stargazing</p>
-            <Image
-            src="/luminaphone.svg"  // Path to your image (must be in the 'public' folder)
-            alt="Lumina Screen" 
+        <div className="h-80 w-1/5 rounded-[20px] bg-[#C4BEEE] pt-8 px-4 flex flex-col items-center justify-between overflow-hidden">
+          <p className="font-semibold text-3xl text-white text-center">Lumina</p>
+          <p className="font-medium text-white text-center pt-2">
+            simplifying the exploration of the magic of stargazing
+          </p>
+          <Image
+            src="/luminaphone.svg"
+            alt="Lumina Screen"
             width={100}
             height={56}
-            className="w-1/2 h-auto mx-auto pt-8" 
-            />
-          </div>
-
-          <div className="h-80 w-1/5 rounded-[20px] mt-28 bg-[#EDDCF1] pt-8 px-4 justify-between">
-          <p className="font-semibold text-3xl text-white text-center">Drafter</p>
-            <p className="font-medium text-white text-center pt-2">analyzing nfl player statistics to predict future stats</p>
-          </div>
-          <div className="h-80 w-1/5 rounded-[20px] mt-52 bg-[#DFDCEE] pt-8 px-4 justify-between">
-          <p className="font-semibold text-3xl text-white text-center">Rexpense</p>
-            <p className="font-medium text-white text-center pt-2">encouraging the youth to manage wealth with data analytics</p>
-
-          </div>
+            className="w-1/2 h-auto pt-4"
+          />
         </div>
 
-        <div className="flex flex-row bg-gradient-to-r from-purple-400 via-purple-500 to-gray-300 inline-block text-transparent bg-clip-text">
+
+          <div className="h-80 w-1/5 rounded-[20px] mt-28 bg-[#EDDCF1] pt-8 px-4 justify-between">
+            <p className="font-semibold text-3xl text-white text-center">Drafter</p>
+            <p className="font-medium text-white text-center pt-2">analyzing nfl player statistics to predict future stats</p>
+            <p className="pt-10 font-semibold text-3xl text-white italic text-center">Coming Soon</p>
+          </div>
+
+          <div className="h-80 w-1/5 rounded-[20px] mt-52 bg-[#DFDCEE] pt-8 px-4 flex flex-col items-center justify-between overflow-hidden">
+          <p className="font-semibold text-3xl text-white text-center">EurekaMart</p>
+            <p className="font-medium text-white text-center pt-2">your new digital refrigerator tracker
+            </p>
+            <Image
+            src="/eurekamartmodel.svg"
+            alt="Lumina Screen"
+            width={100}
+            height={56}
+            className="w-1/2 h-auto pt-4"
+          />
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-evenly text-center bg-gradient-to-r from-purple-400 via-purple-500 to-gray-300 text-transparent bg-clip-text">
           <p className="font-medium">{quotes[0]}</p>
           <p className="font-medium">{quotes[1]}</p>
           <p className="font-medium">{quotes[2]}</p>
-          <p className="font-medium">{quotes[3]}</p>
-
         </div>
+
       </div>
 
       <div className="mt-auto shadow-[0px_0px_20px_#C1BBE1]">
