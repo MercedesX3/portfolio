@@ -16,7 +16,7 @@ export default function Work() {
             />
             </Link>
             <div className="absolute left-1/2 -translate-x-1/2 w-1/3 h-full text-center p-4 flex items-center justify-center space-x-8 rounded-full shadow-[0px_4px_20px_#C1BBE1]">
-                <Link className="text-sm font-bold" href="/work">Work</Link> {/* This navigates to the new page */}
+                <Link className="text-sm text-[#C1BBE1] font-bold " href="/work">Work</Link> {/* This navigates to the new page */}
                 <Link className="text-sm font-bold" href="/about">About</Link>
                 <p className="text-sm font-bold">Resume</p>
             </div>
