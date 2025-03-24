@@ -83,7 +83,7 @@ export default function Home() {
             <p className="font-medium text-white text-center pt-2">analyzing nfl player statistics to predict future stats</p>
             <p className="pt-10 font-semibold text-3xl text-white italic text-center">Coming Soon</p>
           </div>
-
+          
           <div className="h-80 w-1/5 rounded-[20px] mt-52 bg-[#DFDCEE] pt-8 px-4 flex flex-col items-center justify-between overflow-hidden">
           <p className="font-semibold text-3xl text-white text-center">EurekaMart</p>
             <p className="font-medium text-white text-center pt-2">your new digital refrigerator tracker
