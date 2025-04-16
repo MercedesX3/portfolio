@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollVelocity } from "@/components/ui/scroll-velocity";
 
 export default function Home() {
   let quotes = ["There is no prize to perfection. Only an end to pursuit.", 
@@ -97,10 +98,9 @@ export default function Home() {
           />
           </div>
         </div>
-        <div className="flex flex-row items-center justify-evenly text-center bg-gradient-to-r from-purple-400 via-purple-500 to-gray-300 text-transparent bg-clip-text">
-          <p className="font-medium">{quotes[0]}</p>
-          <p className="font-medium">{quotes[1]}</p>
-          <p className="font-medium">{quotes[2]}</p>
+        <div 
+        className="flex flex-row items-center">
+          <ScrollVelocity velocity={3}> {quotes[0]} {quotes[1]} {quotes[2]} {quotes[0]} {quotes[1]} {quotes[2]}</ScrollVelocity>
         </div>
 
       </div>
