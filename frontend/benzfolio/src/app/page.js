@@ -21,7 +21,7 @@ export default function Home() {
         <div className="absolute left-1/2 -translate-x-1/2 w-1/3 h-full text-center p-4 flex items-center justify-center space-x-8 rounded-full shadow-[0px_4px_20px_#C1BBE1]">
           <Link className="text-sm font-bold" href="/work">Work</Link> {/* This navigates to the new page */}
           <Link className="text-sm font-bold" href="/about">About</Link>
-          <p className="text-sm font-bold">Resume</p>
+          <a href="/Mercedes_Xiong_Resume_2025.pdf" target="_blank" rel="noopener noreferrer"><p className="text-sm font-bold">Resume</p></a>
         </div>
 
       </div>
@@ -90,7 +90,7 @@ export default function Home() {
             <p className="font-medium text-white text-center pt-2">your new digital refrigerator tracker
             </p>
             <Image
-            src="/eurekamartmodel.svg"
+            src="/eurekamarthalf.svg"
             alt="Lumina Screen"
             width={100}
             height={56}
