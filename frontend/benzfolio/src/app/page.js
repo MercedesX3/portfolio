@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ScrollVelocity } from "@/components/ui/scroll-velocity";
+import { ScrollVelocity } from "../components/ui/scroll-velocity";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen pt-8 px-8">
+    <div className="flex flex-col h-screen pt-8 px-8 overflow-hidden">
       <div className="flex flex-row items-center w-screen">
         <Image
             src="/Mercedes_Logo.svg"  // Path to your image (must be in the 'public' folder)
@@ -20,8 +20,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-screen overflow-hidden mt-60">
-          <h1 className="font-bold text-[clamp(2rem,10.3vw,12rem)] leading-none whitespace-nowrap">MERCEDES XIONG</h1>
+      <div className="mt-60">
+          <h1 className="font-bold text-[clamp(2rem,10.3vw,12rem)] leading-none whitespace-nowrap text-center">MERCEDES XIONG</h1>
+          <div className="bg-blue-100">
+            <h1>Bob</h1>
+          </div>
       </div>
     </div>
   );
