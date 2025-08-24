@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Scroller from "@/components/Scroller";
-import Books from "@/components/Books";
+import Scroller from "../../components/Scroller";
+import Books from "../../components/Books";
 
 export default function Work() {
 
