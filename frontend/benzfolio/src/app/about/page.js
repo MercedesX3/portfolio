@@ -59,7 +59,7 @@ export default function About() {
                             draggable="false"
                         />
                         </div>
-                        <div onClick={() => setShowModal('books')} className="relative bg-[#E5E3EF] rounded-xl flex justify-center items-center p-10 hover:shadow-[0px_6px_25px_#C5C5C5] transition-shadow duration-200 ease-in-out">
+                        <div onClick={() => setShowModal('books')} className="relative bg-[#E5E3EF] rounded-xl flex justify-center items-center p-10 hover:shadow-[0px_6px_25px_#C5C5C5] transition-shadow duration-200 ease-in-out cursor-pointer">
                         <Image
                             src="/Books.svg"
                             alt="Mercedes Portrait"
@@ -69,7 +69,7 @@ export default function About() {
                             draggable="false"
                         />
                         </div>
-                        <div onClick={() => setShowModal('music')} className="relative bg-[#D8D1FF] rounded-xl flex justify-center items-center p-10 hover:shadow-[0px_6px_25px_#C5C5C5] transition-shadow duration-200 ease-in-out">
+                        <div onClick={() => setShowModal('music')} className="relative bg-[#D8D1FF] rounded-xl flex justify-center items-center p-10 hover:shadow-[0px_6px_25px_#C5C5C5] transition-shadow duration-200 ease-in-out cursor-pointer">
                         <Image
                             src="/Headphone.svg"
                             alt="Mercedes Portrait"

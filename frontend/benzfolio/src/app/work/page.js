@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Scroller from "@/components/Scroller";
+import Books from "@/components/Books";
 
 export default function Work() {
 
@@ -101,6 +102,7 @@ export default function Work() {
                     </div>
                     </a>
                 </div>
+                <Books/>
             </div>
 
             <div className="mt-60 shadow-[0px_0px_20px_#C1BBE1]">
