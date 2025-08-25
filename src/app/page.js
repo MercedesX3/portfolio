@@ -1,8 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-// import { ScrollVelocity } from "../components/ui/scroll-velocity";
+import HorizontalScroller from "../components/HorizontalScroller";
+import RightScrollBand from "../components/RightScrollBand";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    setOffset(window.innerWidth / 2); // safe: runs only in browser
+  }, []);
   return (
     // Let the page grow taller than the viewport and allow vertical scroll
     <div className="flex flex-col min-h-screen pt-8 px-8 overflow-x-hidden">
@@ -45,21 +53,37 @@ export default function Home() {
         <div className="bg-blue-100 mt-10 py-40">
           <h1>Bob</h1>
         </div>
+        
+        {/* Break out of the px-8 padding to reach true screen edge */}
+        {/* Counteract the parent's px-8 padding so text can reach true left edge */}
+{/* Counteract the parent's px-8 padding */}
+<div className="-mx-8 pl-4"> {/* Added pl-4 for some left padding */}
+  <HorizontalScroller speed={2} startOffset={0.5} fontSize="responsive" className="text-black">
+    Full Stack Developer - Computer Science @ UTD
+  </HorizontalScroller>
+</div>
 
-        {/* add more content to test scroll */}
-        <div className="py-10">
-          <div className="text-right">
-            <h1>Full Stack Developer - Computer Science @ UTD</h1>
-          </div>
-          <hr className="border-t-2 border-black"/>
-          <div className="text-left">
-            <h1>Director of Community @ ACM UTD</h1>
-          </div>
-          <hr className="border-t-2 border-black"/>
-          <div className="text-right">
-            <h1>Designer & Front-End Developer for SAGE</h1>
-          </div>
+<hr className="border-t-2 border-black"/>
+
+<div className="-mx-8 pr-4"> {/* Added pl-4 for some left padding */}
+  <RightScrollBand speed={2} startOffset={0.5} fontSize="responsive" className="text-purple-300">
+  Director of Community @ ACM UTD
+  </RightScrollBand>
+</div>
+
+<hr className="border-t-2 border-black"/>
+
+<div className="-mx-8 pl-4"> {/* Added pl-4 for some left padding */}
+  <HorizontalScroller speed={2} startOffset={0.5} fontSize="responsive" className="text-black">
+    Designer & Front End Developer for Sage
+    <button className="bg-black px-10 py-2 rounded-full text-white text-3xl shadow-[0px_0px_15px_#7AFFA6] hover:shadow-[0px_0px_15px_#00FF54] ">Check Out Sage</button>
+  </HorizontalScroller>
+</div>
+
+<div className="bg-blue-100 mt-10 py-40">
+          <h1>Bob</h1>
         </div>
+
       </main>
     </div>
   );
