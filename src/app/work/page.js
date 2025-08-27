@@ -75,33 +75,6 @@ export default function Work() {
                 </div>
 
                 <h1>Ongoing Projects</h1>
-                <div className="flex flex-row">
-                    <a href="https://github.com/anushap6571/Liveli" target="_blank" rel="noopener noreferrer">
-                    <div className="flex h-[438px] w-[83px] bg-white rounded-lg shadow-2xl items-end justify-center py-16 hover:text-[#FF9500] transition-shadow duration-400 ease-in-out">
-                        <p className="transform -rotate-90 origin-center">LIVELI</p>
-                    </div>
-                    </a>
-                    <a href="https://github.com/acmutd/PeechiPortal" target="_blank" rel="noopener noreferrer">
-                    <div className="flex h-[438px] w-[83px] bg-white rounded-lg shadow-2xl items-end justify-center py-16 hover:text-[#AA4235] transition-shadow duration-400 ease-in-out">
-                        <p className="transform -rotate-90 origin-center">Peechi</p>
-                    </div>
-                    </a>
-                    <a href="https://www.figma.com/design/iwH36ZXhrEFh198MAN071x/Bookmarked?node-id=0-1&t=k8LgHGPwenJb48Ji-1" target="_blank" rel="noopener noreferrer">
-                    <div className="flex h-[438px] w-[83px] bg-white rounded-lg shadow-2xl items-end justify-center py-28 hover:text-[#DBC2CA] transition-shadow duration-400 ease-in-out">
-                        <p className="transform -rotate-90 origin-center">Bookmarked</p>
-                    </div>
-                    </a>
-                    <a href="https://github.com/MercedesX3/portfolio" target="_blank" rel="noopener noreferrer">
-                    <div className="flex h-[438px] w-[83px] bg-white rounded-lg shadow-2xl items-end justify-center py-20 hover:text-[#C1BBE1] transition-shadow duration-400 ease-in-out">
-                        <p className="transform -rotate-90 origin-center">Portfolio</p>
-                    </div>
-                    </a>
-                    <a href="https://www.figma.com/design/vSuEaFV1eIqmKiKPITK5la/Windle?node-id=0-1&t=JYQr4jFQ7vSRET6R-1" target="_blank" rel="noopener noreferrer">
-                    <div className="ml-12 flex h-[438px] w-[296px] bg-white rounded-lg shadow-2xl items-center justify-center hover:text-[#4D8ACC] transition-shadow duration-400 ease-in-out">
-                        <p className="">WINDLE</p>
-                    </div>
-                    </a>
-                </div>
                 <Books/>
             </div>
 

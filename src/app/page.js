@@ -7,10 +7,27 @@ import { useState, useEffect } from "react";
 
 import ArcherHomePage from "../../public/homePics/HeroPageArcher.png"
 import LuminaPage from "../../public/homePics/LuminaScreens.png"
-import { MoveRight } from "lucide-react";
+import BookMarked from "../../public/homePics/Bookmarked.png"
+import EurekaMart from "../../public/homePics/EurekeMart.png"
+import Finterest from "../../public/homePics/OpeningScreenFinterest.png"
+import Windle from "../../public/homePics/WindleScreen.png"
+import { MoveRight, Wind } from "lucide-react";
+import ProjectModal from "../components/ui/projectModal"
 
 export default function Home() {
   const [offset, setOffset] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    // Lock body scroll while modal is open
+    if (selectedProject) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [selectedProject]);
+
+  const openProject = (proj) => setSelectedProject(proj);
+  const closeProject = () => setSelectedProject(null);
+
 
   useEffect(() => {
     setOffset(window.innerWidth / 2); // safe: runs only in browser
@@ -54,14 +71,10 @@ export default function Home() {
           MERCEDES XIONG
         </h1>
 
-        <div className="bg-blue-100 mt-10 py-20 relative w-full">
-          <Image
-          src="/Rectangle.png"
-          alt="Description of image"
-          fill                // 🔑 tells Next.js to fill the parent
-          className="object-cover" // or "object-cover" to crop & fill
-        />
+        <div className="relative w-full mt-10 py-20 overflow-hidden">
+          {/* animated gradient background */}          <div className="absolute inset-0 bg-gradient-to-r from-[#C1BBE1] via-[#ECDCF1] to-[#a0a5fe] bg-[length:200%_200%] animate-[gradientMove_8s_ease_infinite]" />
         </div>
+
         
         {/* Break out of the px-8 padding to reach true screen edge */}
         {/* Counteract the parent's px-8 padding so text can reach true left edge */}
@@ -98,7 +111,24 @@ export default function Home() {
 
         <div className="pt-24 space-y-20">
             <div className="flex flex-row justify-between items-center">
-              <div className="group hover:rotate-6 transition-transform">
+              <div className="group hover:rotate-6 transition-transform"
+                role="button"
+                tabIndex={0}
+                onClick={()=>openProject({
+                  id: "archer",
+                  title: "Archer",
+                  description: "The Dictionary for Every Architect",
+                  image: ArcherHomePage, // uses your imported image
+                  techStack: ["Next.js", "React", "Tailwind"],
+                  purpose:
+                    "Build a clean, fast reference for architectural terminology with delightful UX.",
+                  date: "2025",
+                  challenges: "Navigation IA, fast search, and content modeling.",
+                  learnings: "Design systems, incremental static regeneration.",
+                  githubUrl: "https://github.com/MercedesX3/archer", // update if you have it
+                })}
+                onKeyDown={(e) => e.key === "Enter" && e.currentTarget.click()}
+              >
                 <div className="relative w-[80vh] h-[30vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
               <Image
                     src={ArcherHomePage}
@@ -111,7 +141,23 @@ export default function Home() {
                 <h1 className="text-lg font-bold">Archer</h1>
                 <h1 className="text-lg">The Dictionary for Every Architect</h1>
               </div>
-              <div className="group hover:-rotate-6 transition-transform text-right">
+              <div className="group hover:-rotate-6 transition-transform text-right"
+              role="button"
+              tabIndex={0}
+              onClick={()=>openProject({
+                id: "lumina",
+                title: "Lumina",
+                description: "Your Space App for Stagazing Experiences",
+                image: LuminaPage, // uses your imported image
+                techStack: ["Expo", "React Native", "AWS Event Bridge", "AWS Lambda", "DynamoDB"],
+                purpose:
+                  "Build a clean, fast reference for architectural terminology with delightful UX.",
+                date: "2024",
+                challenges: "Navigation IA, fast search, and content modeling.",
+                learnings: "Design systems, incremental static regeneration.",
+                githubUrl: "https://github.com/MercedesX3/Lumina", // update if you have it
+              })}
+              onKeyDown={(e) => e.key === "Enter" && e.currentTarget.click()}>
                 <div className="relative w-[80vh] h-[30vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image
                     src={LuminaPage}
@@ -128,10 +174,26 @@ export default function Home() {
             </div>
 
             <div className="flex flex-row justify-between items-center">
-              <div className="hover:rotate-3 transition-transform">
-                <div className="relative w-[50vh] h-[35vh]">
+              <div className="group hover:rotate-3 transition-transform "
+                role="button"
+                tabIndex={0}
+                onClick={()=>openProject({
+                  id: "finterest",
+                  title: "Finterest",
+                  description: "Use your interests to invest in your finances",
+                  image: Finterest, // uses your imported image
+                  techStack: ["Expo", "React Native", "Express", "MongoDB"],
+                  purpose:
+                    "Build a clean, fast reference for architectural terminology with delightful UX.",
+                  date: "2024",
+                  challenges: "Navigation IA, fast search, and content modeling.",
+                  learnings: "Design systems, incremental static regeneration.",
+                  githubUrl: "https://github.com/MercedesX3/Finterest",
+                })}
+                >
+                <div className="relative w-[85vh] h-[35vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image
-                    src="/Rectangle.png"
+                    src={Finterest}
                     alt="Description of image"
                     fill                // 🔑 tells Next.js to fill the parent
                     className="object-cover" // or "object-cover" to crop & fill
@@ -141,10 +203,25 @@ export default function Home() {
                 <h1 className="text-lg font-bold">Finterest</h1>
                 <h1 className="text-lg">Use your interests to invest in your finances</h1>
               </div>
-              <div className="hover:-rotate-6 transition-transform text-right">
-                <div className="relative w-[45h] h-[40vh]">
+              <div className="group hover:-rotate-6 transition-transform text-right"
+              role="button"
+              tabIndex={0}
+              onClick={()=>openProject({
+                id: "eurekaMart",
+                title: "EurekaMart",
+                description: "Your digital refrigerator and cookbook in one",
+                image: EurekaMart, // uses your imported image
+                techStack: ["Expo", "React Native", "Express", "MongoDB"],
+                purpose:
+                  "Build a clean, fast reference for architectural terminology with delightful UX.",
+                date: "2024",
+                challenges: "Navigation IA, fast search, and content modeling.",
+                learnings: "Design systems, incremental static regeneration.",
+                githubUrl: "https://github.com/MercedesX3/Finterest",
+              })}>
+                <div className="relative w-[60vh] h-[40vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image
-                    src="/Rectangle.png"
+                    src={EurekaMart}
                     alt="Description of image"
                     fill                // 🔑 tells Next.js to fill the parent
                     className="object-cover" // or "object-cover" to crop & fill
@@ -158,10 +235,26 @@ export default function Home() {
             </div>
 
             <div className="flex flex-row justify-between items-center">
-              <div className="hover:rotate-6 transition-transform text-left">
-                  <div className="relative w-[60vh] h-[25vh]">
+              <div className="group hover:rotate-6 transition-transform text-left"
+                role="button"
+                tabIndex={0}
+                onClick={()=>openProject({
+                  id: "windle",
+                  title: "Windle",
+                  description: "Forecasting Market Movements Using Weather Intelligence",
+                  image: Windle, // uses your imported image
+                  techStack: ["TailwindCSS", "React"],
+                  purpose:
+                    "Build a clean, fast reference for architectural terminology with delightful UX.",
+                  date: "2024",
+                  challenges: "Navigation IA, fast search, and content modeling.",
+                  learnings: "Design systems, incremental static regeneration.",
+                  githubUrl: "https://github.com/MercedesX3/Windle",
+                })}
+              >
+                  <div className="relative w-[60vh] h-[30vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                     <Image
-                      src="/Rectangle.png"
+                      src={Windle}
                       alt="Description of image"
                       fill                // 🔑 tells Next.js to fill the parent
                       className="object-cover" // or "object-cover" to crop & fill
@@ -171,10 +264,25 @@ export default function Home() {
                   <h1 className="text-lg font-bold">Windle</h1>
                   <h1 className="text-lg">Forecasting Market Movements Using Weather Intelligence</h1>
                 </div>
-              <div className="hover:-rotate-6 transition-transform text-right">
-                <div className="relative w-[80vh] h-[30vh]">
+              <div className="group hover:-rotate-6 transition-transform text-right"
+                  role="button"
+                  tabIndex={0}
+                  onClick={()=>openProject({
+                    id: "bookmarked",
+                    title: "Bookmarked",
+                    description: "Where stories live, lists thrive, and readers find their next adventures",
+                    image: BookMarked, // uses your imported image
+                    techStack: ["TailwindCSS", "React", "AWS Lambda", "API Gateway", "DynamoDB", "EventBridge"],
+                    purpose:
+                      "Build a clean, fast reference for architectural terminology with delightful UX.",
+                    date: "2024",
+                    challenges: "Navigation IA, fast search, and content modeling.",
+                    learnings: "Design systems, incremental static regeneration.",
+                    githubUrl: "https://github.com/MercedesX3/Bookmarked",
+                  })}>
+                <div className="relative w-[80vh] h-[40vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image
-                    src="/Rectangle.png"
+                    src={BookMarked}
                     alt="Description of image"
                     fill                // 🔑 tells Next.js to fill the parent
                     className="object-cover" // or "object-cover" to crop & fill
@@ -198,6 +306,10 @@ export default function Home() {
                 </div>      
                 </div>
       </div>
+
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={closeProject} />
+        )}
     </div>
   );
 }

@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 export default function Books() {
-  const [selected, setSelected] = useState(null);
-
   const projects = [
     {
       name: "LIVELI",
@@ -38,63 +36,47 @@ export default function Books() {
       name: "WINDLE",
       href: "https://www.figma.com/design/vSuEaFV1eIqmKiKPITK5la/Windle?node-id=0-1&t=JYQr4jFQ7vSRET6R-1",
       hoverColor: "#4D8ACC",
-      padding: "py-20", // for center alignment
+      padding: "py-20",
       rotate: true,
     },
   ];
 
   return (
     <div className="p-6">
-      <h1 className="text-4xl font-bold mb-4">Ongoing Projects</h1>
 
       {/* Scrollable Horizontal Project Cards */}
-      <div className="overflow-x-auto whitespace-nowrap mt-16">
+      <div className="overflow-x-auto whitespace-nowrap mt-4">
         <div className="flex">
-          {projects.map((project, index) => {
-            const isSelected = index === selected;
-
-            return (
-              <a
-                key={project.name}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0"
+          {projects.map((project) => (
+            <a
+              key={project.name}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300 shrink-0"
+              style={{ ["--hover"]: project.hoverColor }}
+            >
+              <div
+                className={`flex ${
+                  project.rotate ? "items-end" : "items-center"
+                } justify-center rounded-lg shadow-2xl cursor-pointer transition-all duration-300 ease-in-out
+                  bg-white text-black group-hover:[color:${project.hoverColor}]
+                  ${project.padding}
+                  w-[83px] h-[438px] hover:w-[296px] hover:scale-105`}
               >
-                <div
-                  onClick={(e) => {
-                    e.preventDefault(); // prevent link click if just selecting
-                    setSelected(isSelected ? null : index);
-                  }}
-                  className={`flex ${
-                    project.rotate ? "items-end" : "items-center"
-                  } justify-center rounded-lg shadow-2xl cursor-pointer transition-all duration-300 ease-in-out
-                    bg-white hover:text-[${project.hoverColor}]
-                    ${project.padding}
-                    ${
-                      isSelected
-                        ? "w-[296px] h-[438px] scale-105"
-                        : "w-[83px] h-[438px]"
-                    }`}
+                <p
+                  className={`font-bold transition-transform duration-300
+                    ${project.rotate ? "-rotate-90 group-hover:rotate-0" : ""}`}
                 >
-                  <p
-                    className={`font-bold transition-transform duration-300
-                      ${
-                        project.rotate
-                          ? isSelected
-                            ? "rotate-0" // 🔑 rotate back when selected
-                            : "-rotate-90"
-                          : ""
-                      }`}
-                  >
-                    {project.name}
-                  </p>
-                </div>
-              </a>
-            );
-          })}
+                  {project.name}
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </div>
   );
 }
+
+

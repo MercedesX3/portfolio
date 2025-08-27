@@ -9,6 +9,15 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			animation: {
+				gradient: "gradientMove 8s ease infinite",
+			},
+			keyframes: {
+				gradientMove: {
+				  "0%, 100%": { backgroundPosition: "0% 50%" },
+				  "50%": { backgroundPosition: "100% 50%" },
+				},
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
