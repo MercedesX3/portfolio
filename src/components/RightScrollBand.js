@@ -1,3 +1,4 @@
+import { clamp } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function RightScrollBand({ 
@@ -38,13 +39,14 @@ export default function RightScrollBand({
         // Calculate start and end positions
         const startPosition = -containerWidth * startOffset; // Start off-screen to the left
         // End position: stop when text reaches desired position on the right
-        const endPosition = containerWidth*0.42; // Stop at 20% from left edge (adjust as needed)
+        const endPosition = containerWidth * 0.4; // Stop at 20% from left edge (adjust as needed)
 
         // Calculate current position based on scroll (ADD instead of subtract for rightward movement)
         const currentPosition = startPosition + (scrollY * speed);
 
         // Clamp the position to not go past the end position
         const clampedPosition = Math.min(currentPosition, endPosition);
+
 
       // Debug logs
       console.log({
@@ -68,7 +70,7 @@ export default function RightScrollBand({
   // Font size mapping
   const getFontSizeClass = () => {
     if (fontSize === "responsive") {
-      return "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl";
+      return "text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-5xl";
     }
     
     const sizeMap = {

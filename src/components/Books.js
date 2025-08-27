@@ -38,8 +38,8 @@ export default function Books() {
       name: "WINDLE",
       href: "https://www.figma.com/design/vSuEaFV1eIqmKiKPITK5la/Windle?node-id=0-1&t=JYQr4jFQ7vSRET6R-1",
       hoverColor: "#4D8ACC",
-      padding: "py-0", // for center alignment
-      rotate: false,
+      padding: "py-20", // for center alignment
+      rotate: true,
     },
   ];
 
@@ -48,8 +48,8 @@ export default function Books() {
       <h1 className="text-4xl font-bold mb-4">Ongoing Projects</h1>
 
       {/* Scrollable Horizontal Project Cards */}
-      <div className="overflow-x-auto whitespace-nowrap">
-        <div className="flex gap-4">
+      <div className="overflow-x-auto whitespace-nowrap mt-16">
+        <div className="flex">
           {projects.map((project, index) => {
             const isSelected = index === selected;
 
@@ -78,9 +78,14 @@ export default function Books() {
                     }`}
                 >
                   <p
-                    className={`${
-                      project.rotate ? "transform -rotate-90 origin-center" : ""
-                    } font-medium`}
+                    className={`font-bold transition-transform duration-300
+                      ${
+                        project.rotate
+                          ? isSelected
+                            ? "rotate-0" // 🔑 rotate back when selected
+                            : "-rotate-90"
+                          : ""
+                      }`}
                   >
                     {project.name}
                   </p>

@@ -68,7 +68,7 @@ export default function LeftScrollBand({
   // Font size mapping
   const getFontSizeClass = () => {
     if (fontSize === "responsive") {
-      return "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl";
+      return "text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-5xl";
     }
     
     const sizeMap = {
