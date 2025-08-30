@@ -46,7 +46,7 @@ export default function ProjectModal({ project, onClose }) {
         </CardHeader>
 
         {/* Image */}
-        <ImageCarousel images={project.photosForCarousel}/>
+        <ImageCarousel className="mt-5" images={project.photosForCarousel}/>
 
         <CardContent>
           {/* Tech chips */}
@@ -55,7 +55,7 @@ export default function ProjectModal({ project, onClose }) {
               {project.techStack.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border px-3 py-1 text-xs"
+                  className="rounded-full border px-3 py-1 text-xs hover:bg-black/5 transition-colors duration-500"
                 >
                   {t}
                 </span>
@@ -74,13 +74,31 @@ export default function ProjectModal({ project, onClose }) {
             {project.challenges && (
               <section>
                 <h3 className="mb-1 text-sm font-semibold">Challenges</h3>
-                <p className="text-sm text-muted-foreground">{project.challenges}</p>
+                <ul
+                  role="list"
+                  className="list-disc list-inside text-sm text-muted-foreground space-y-1 marker:text-black/60"
+                >
+                {(Array.isArray(project.challenges) ? project.challenges : [project.challenges])
+                  .filter(Boolean)
+                  .map((k, i) => (
+                    <li key={i}>{k}</li>
+                  ))}
+                </ul>
               </section>
             )}
             {project.learnings && (
               <section>
                 <h3 className="mb-1 text-sm font-semibold">Learnings</h3>
-                <p className="text-sm text-muted-foreground">{project.learnings}</p>
+                <ul
+                  role="list"
+                  className="list-disc list-inside text-sm text-muted-foreground space-y-1 marker:text-black/60"
+                >
+                {(Array.isArray(project.learnings) ? project.learnings : [project.learnings])
+                  .filter(Boolean)
+                  .map((k, i) => (
+                    <li key={i}>{k}</li>
+                  ))}
+                </ul>
               </section>
             )}
             {project.date && (
@@ -112,12 +130,12 @@ export default function ProjectModal({ project, onClose }) {
               </a>
             )}
           </div>
-          <button
+          {/* <button
             onClick={onClose}
             className="mt-4 text-sm border-1 border-gray-400 px-5 py-2 rounded-md"
           >
             Close
-          </button>
+          </button> */}
         </CardFooter>
       </Card>
     </div>

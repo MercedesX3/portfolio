@@ -155,10 +155,13 @@ export default function Home() {
                   image: ArcherHomePage, // uses your imported image
                   techStack: ["Next.js", "React", "Tailwind", "Firebase"],
                   purpose:
-                    "Build a clean, fast reference for architectural terminology with delightful UX.",
+                    "The pocket spellbook of architecture - a living dictionary where blueprints meets vocabulary. Archer is built to allow users to browse terms based on category, era, or style. The visual collections that are built on archer are here to inspire useers with architectural examples, sketches, or reference images.",
                   date: "2025",
-                  challenges: "Navigation IA, fast search, and content modeling.",
-                  learnings: "Design systems, incremental static regeneration.",
+                  challenges: ["Balanced authentic vintage newspaper layout design with contemporary usability standards",
+                  "Difficulty with handling visual clutters when displaying multiple terms with images"],
+                  learnings: ["Implemented asynchronous authentication flows using onAuthStateChanged listeners to handle real-time user session updates and loading states",
+                    "Created scalable design patterns using Tailwind CSS that adapted vintage newspaper aesthetics across device sizes"
+                  ],
                   githubUrl: "https://github.com/MercedesX3/archer", // update if you have it
                   photosForCarousel: [ArcherComponents, ArcherHeroPage, ArcherSignUpPage, ArcherExplorePage],
                 })}
@@ -186,10 +189,13 @@ export default function Home() {
                 image: LuminaPage, // uses your imported image
                 techStack: ["Expo", "React Native", "AWS Event Bridge", "AWS Lambda", "DynamoDB"],
                 purpose:
-                  "Build a clean, fast reference for architectural terminology with delightful UX.",
+                  "A mobile application for astronomy enthusiasts that intelligently combines real-time weather data, celestial event tracking, and location-based recommendations to optimize stargazing experiences.",
                 date: "2024",
-                challenges: "Navigation IA, fast search, and content modeling.",
-                learnings: "Design systems, incremental static regeneration.",
+                challenges: ["Designed and implemented scalable AWS serverless infrastructure using Lambda functions and DynamoDB to handle variable user loads while maintaining cost-effective cloud resource utilization and real-time data processing",
+                  "Solved complex UI/UX challenges for displaying large volumes of astronomical data (weather forecasts, celestial events, moon phases, stargazing sites) without overwhelming users through intuitive information design"],
+                learnings: ["Developed proficiency in cross-platform mobile development using React Native and NativeWind styling",
+                  "Learned serverless computing principles using AWS Amplify, Lambda functions, and DynamoDB for scalable data storage and processing, implementing efficient API Gateway patterns and cloud-native development practices"
+                ],
                 githubUrl: "https://github.com/MercedesX3/Lumina", // update if you have it
                 photosForCarousel: [LuminaHeroPage, LuminaSignUpPage, LuminaCalendarPage, LuminaEventsPage],
               })}
@@ -223,7 +229,7 @@ export default function Home() {
                     "Build a clean, fast reference for architectural terminology with delightful UX.",
                   date: "2024",
                   challenges: "Navigation IA, fast search, and content modeling.",
-                  learnings: "Design systems, incremental static regeneration.",
+                  learnings: ["Design systems, incremental static regeneration.","Design systems, incremental static regeneration."],
                   githubUrl: "https://github.com/MercedesX3/Finterest",
                   photosForCarousel: [FinterestHeroPage, FinterestSignInPage, FinterestExplorePage, FinterestInterestPage]
                 })}

@@ -193,7 +193,8 @@ export default function About() {
                                         width={100}
                                         height={100}
                                         draggable="false"
-                                        className="mr-8"
+                                        className="mr-8 animate-spin"
+                                        style={{ animationDuration: "3s" }}
                                     />
                                     <div >
                                         <p className="font-semibold text-xl">The Night We Met</p>
@@ -211,7 +212,9 @@ export default function About() {
                                         width={100}
                                         height={100}
                                         draggable="false"
-                                        className="ml-8"
+                                        className="ml-8 animate-spin"
+                                        style={{animationDuration: "3s"}}
+
                                     />
                                 </div>
                                 <div className="flex flex-row h-[100px] items-center">
@@ -221,7 +224,8 @@ export default function About() {
                                         width={100}
                                         height={100}
                                         draggable="false"
-                                        className="mr-8"
+                                        className="mr-8 animate-spin"
+                                        style={{animationDuration: "3s"}}
                                     />
                                     <div >
                                         <p className="font-semibold text-xl">Have You Ever Seen The Rain</p>
