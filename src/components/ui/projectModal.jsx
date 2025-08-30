@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "../../components/ui/card"; // adjust path
 import { X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
+import ImageCarousel from "../ui/imageCarousel"
 
 export default function ProjectModal({ project, onClose }) {
   const dialogRef = useRef(null);
@@ -46,20 +46,7 @@ export default function ProjectModal({ project, onClose }) {
         </CardHeader>
 
         {/* Image */}
-        {project.image && (
-          <div className="mt-5">
-            <div className="relative w-full h-[220px] rounded-lg overflow-hidden ring-1 ring-black/5">
-              <Image
-                src={project.image}
-                alt={`${project.title} preview`}
-                fill
-                className="object-cover"
-                sizes="(min-width: 768px) 800px, 100vw"
-                priority
-              />
-            </div>
-          </div>
-        )}
+        <ImageCarousel images={project.photosForCarousel}/>
 
         <CardContent>
           {/* Tech chips */}
@@ -103,7 +90,7 @@ export default function ProjectModal({ project, onClose }) {
         </CardContent>
 
         <CardFooter className="justify-between gap-2">
-          <div className="flex gap-2">
+          <div className="mt-4 flex gap-2">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -127,7 +114,7 @@ export default function ProjectModal({ project, onClose }) {
           </div>
           <button
             onClick={onClose}
-            className="mt-10 text-sm border-1 border-gray-400 px-5 py-2 rounded-md"
+            className="mt-4 text-sm border-1 border-gray-400 px-5 py-2 rounded-md"
           >
             Close
           </button>

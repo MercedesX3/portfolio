@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react"
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame, wrap } from "framer-motion"
-import { cn } from "@/lib/utils"
 
 const ScrollVelocity = React.forwardRef(
   ({ children, velocity = 5, movable = true, clamp = false, className, ...props }, ref) => {
@@ -45,7 +44,7 @@ const ScrollVelocity = React.forwardRef(
     return (
       <div
         ref={ref}
-        className={cn(
+        className={(
           "absolute m-0 flex flex-nowrap overflow-hidden whitespace-nowrap leading-[0.8] tracking-[-2px]",
           className
         )}

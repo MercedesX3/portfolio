@@ -14,6 +14,40 @@ import Windle from "../../public/homePics/WindleScreen.png"
 import { MoveRight, Wind } from "lucide-react";
 import ProjectModal from "../components/ui/projectModal"
 
+import ArcherHeroPage from "../../public/archerPhotos/Hero Page.png"
+import ArcherExplorePage from "../../public/archerPhotos/Explore Page.png"
+import ArcherSignUpPage from "../../public/archerPhotos/Sign Up Page.png"
+import ArcherComponents from "../../public/archerPhotos/archerComponents.png"
+
+import LuminaHeroPage from "../../public/luminaPhotos/BACKGROUND.png"
+import LuminaSignUpPage from "../../public/luminaPhotos/SIGNUP/SIGNIN SCREEN.png"
+import LuminaCalendarPage from "../../public/luminaPhotos/CALENDAR SCREEN.png"
+import LuminaEventsPage from "../../public/luminaPhotos/EVENTS SCREEN.png"
+
+import FinterestHeroPage from "../../public/finterestPhotos/openingScreen.png"
+import FinterestSignInPage from "../../public/finterestPhotos/Sign In Page.png"
+import FinterestInterestPage from "../../public/finterestPhotos/Interest Page.png"
+import FinterestExplorePage from "../../public/finterestPhotos/Explore Screen.png"
+
+import EureakaMartHeroPage from "../../public/eurekamartPhotos/Opening Page.png"
+import EurekaMartLoginPage from "../../public/eurekamartPhotos/Login Page.png"
+import EurekaMartHomePage from "../../public/eurekamartPhotos/Home Screen.png"
+import EurekaMartItemsPage from "../../public/eurekamartPhotos/Items Screen.png"
+import EurekaMartSelectedRecipePage from "../../public/eurekamartPhotos/Selected Recipe Screen.png"
+
+import WindleLandingPage from "../../public/windlePhotos/Landing Page.png"
+import WindleLoginPage from "../../public/windlePhotos/Login Page.png"
+import WindleComponents from "../../public/windlePhotos/windleComponents.png"
+
+import BookmarkedHeroPage from "../../public/bookmarkedPhotos/Hero Page.png"
+import BookmarkedComponents from "../../public/bookmarkedPhotos/bookmarkedComponents.png"
+import BookmarkedLoginPage from "../../public/bookmarkedPhotos/Login Page.png"
+import BookmarkedDiscoverPage from "../../public/bookmarkedPhotos/Discover Page.png"
+import BookmarkedListsAndTrends from "../../public/bookmarkedPhotos/Lists & Trends Page.png"
+import BookmarkedYourShelfPage from "../../public/bookmarkedPhotos/Your Shelf Page.png"
+
+
+
 export default function Home() {
   const [offset, setOffset] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -119,13 +153,14 @@ export default function Home() {
                   title: "Archer",
                   description: "The Dictionary for Every Architect",
                   image: ArcherHomePage, // uses your imported image
-                  techStack: ["Next.js", "React", "Tailwind"],
+                  techStack: ["Next.js", "React", "Tailwind", "Firebase"],
                   purpose:
                     "Build a clean, fast reference for architectural terminology with delightful UX.",
                   date: "2025",
                   challenges: "Navigation IA, fast search, and content modeling.",
                   learnings: "Design systems, incremental static regeneration.",
                   githubUrl: "https://github.com/MercedesX3/archer", // update if you have it
+                  photosForCarousel: [ArcherComponents, ArcherHeroPage, ArcherSignUpPage, ArcherExplorePage],
                 })}
                 onKeyDown={(e) => e.key === "Enter" && e.currentTarget.click()}
               >
@@ -156,6 +191,7 @@ export default function Home() {
                 challenges: "Navigation IA, fast search, and content modeling.",
                 learnings: "Design systems, incremental static regeneration.",
                 githubUrl: "https://github.com/MercedesX3/Lumina", // update if you have it
+                photosForCarousel: [LuminaHeroPage, LuminaSignUpPage, LuminaCalendarPage, LuminaEventsPage],
               })}
               onKeyDown={(e) => e.key === "Enter" && e.currentTarget.click()}>
                 <div className="relative w-[80vh] h-[30vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
@@ -189,6 +225,7 @@ export default function Home() {
                   challenges: "Navigation IA, fast search, and content modeling.",
                   learnings: "Design systems, incremental static regeneration.",
                   githubUrl: "https://github.com/MercedesX3/Finterest",
+                  photosForCarousel: [FinterestHeroPage, FinterestSignInPage, FinterestExplorePage, FinterestInterestPage]
                 })}
                 >
                 <div className="relative w-[85vh] h-[35vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
@@ -218,6 +255,7 @@ export default function Home() {
                 challenges: "Navigation IA, fast search, and content modeling.",
                 learnings: "Design systems, incremental static regeneration.",
                 githubUrl: "https://github.com/MercedesX3/Finterest",
+                photosForCarousel: [EureakaMartHeroPage, EurekaMartLoginPage, EurekaMartHomePage, EurekaMartItemsPage]
               })}>
                 <div className="relative w-[60vh] h-[40vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image
@@ -250,6 +288,7 @@ export default function Home() {
                   challenges: "Navigation IA, fast search, and content modeling.",
                   learnings: "Design systems, incremental static regeneration.",
                   githubUrl: "https://github.com/MercedesX3/Windle",
+                  photosForCarousel: [WindleLandingPage, WindleComponents, WindleLoginPage]
                 })}
               >
                   <div className="relative w-[60vh] h-[30vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
@@ -279,6 +318,7 @@ export default function Home() {
                     challenges: "Navigation IA, fast search, and content modeling.",
                     learnings: "Design systems, incremental static regeneration.",
                     githubUrl: "https://github.com/MercedesX3/Bookmarked",
+                    photosForCarousel: [BookmarkedHeroPage, BookmarkedComponents, BookmarkedLoginPage, BookmarkedDiscoverPage, BookmarkedListsAndTrends, BookmarkedYourShelfPage]
                   })}>
                 <div className="relative w-[80vh] h-[40vh] border-2 border-transparent group-hover:border-gray-300 transition-colors duration-300">
                   <Image

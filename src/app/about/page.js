@@ -8,24 +8,38 @@ export default function About() {
     const [showModal, setShowModal] = useState(null);
      
     return (
-        <div className="grid grid-rows-[36px_1fr_94px] items-center bg-white sm:pt-6 font-sans">
-            <div className="relative bg-blue-500 sm:pl-6 sm:pr-6">
-                <Link href="\">
-                <Image
-                    src="/Mercedes_Logo.svg"  // Path to your image (must be in the 'public' folder)
-                    alt="Mercedes Logo" 
-                    width={36}  // Set width
-                    height={36} // Set height
-                    className="absolute" // Tailwind classes for styling
-                    draggable="false"
-                />
-                </Link>
-                <div className="absolute left-1/2 -translate-x-1/2 w-1/3 h-full text-center p-4 flex items-center justify-center space-x-8 rounded-full shadow-[0px_4px_20px_#C1BBE1]">
-                    <Link className="text-sm font-bold" href="/work">Work</Link> {/* This navigates to the new page */}
-                    <Link className="text-sm font-bold text-[#C1BBE1]" href="/about">About</Link>
-                    <a href="/Mercedes_Xiong_Resume_2025 - V3.pdf" target="_blank" rel="noopener noreferrer"><p className="text-sm font-bold">Resume</p></a>
-                </div>
-            </div>
+    <div className="flex flex-col min-h-screen pt-8 overflow-x-hidden">
+        {/* Make this relative so the absolute pill centers relative to this row */}
+        <div className="relative flex flex-row items-center w-full px-8">
+        <Link href="\">
+          <Image
+            src="/Mercedes_Logo.svg"
+            alt="Mercedes Logo"
+            width={36}
+            height={36}
+          />
+          </Link>
+          <div
+            className="
+              absolute left-1/2 -translate-x-1/2 bg-white
+              flex flex-row items-center py-2
+              px-8 sm:px-12 md:px-20 lg:px-24
+              gap-6 sm:gap-8
+              rounded-full shadow-[0px_4px_20px_#C1BBE1]
+            "
+          >
+            <Link className="text-sm font-bold hover:text-[#C1BBE1]" href="/work">Work</Link>
+            <Link className="text-sm font-bold hover:text-[#C1BBE1]" href="/about">About</Link>
+            <a
+              href="/Mercedes_Xiong_Resume_2025%20-%20V3.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-bold hover:text-[#C1BBE1]"
+            >
+              Resume
+            </a>
+          </div>
+        </div>
 
             <div>
                 <div className="flex flex-row mt-32 h-[64vh] px-96 gap-16">

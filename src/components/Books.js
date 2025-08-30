@@ -2,6 +2,15 @@
 
 import React from "react";
 
+import WindleBookCover from "../../public/covers/WindleBookCover.png"
+import PortfolioBookCover from "../../public/covers/PortfolioBookCover.png"
+import BookmarkedBookCover from "../../public/covers/BookmarkedBookCover.png"
+import PeechiGamesBookCover from "../../public/covers/PeechiGamesBookCover.png"
+import LiveliBookCover from "../../public/covers/LiveliBookCover.png"
+import { Book } from "lucide-react";
+import { Port_Lligat_Sans } from "next/font/google";
+
+
 export default function Books() {
   const projects = [
     {
@@ -10,6 +19,9 @@ export default function Books() {
       hoverColor: "#FF9500",
       padding: "py-16",
       rotate: true,
+      shortTitle: "LVLI",
+      cover: LiveliBookCover,
+      description: "Your shared albums have now gone live",
     },
     {
       name: "Peechi",
@@ -17,6 +29,9 @@ export default function Books() {
       hoverColor: "#AA4235",
       padding: "py-16",
       rotate: true,
+      shortTitle: "PCG",
+      cover: PeechiGamesBookCover,
+      description: "Netflix-inspired portal for ACM Peechi Games",
     },
     {
       name: "Bookmarked",
@@ -24,6 +39,9 @@ export default function Books() {
       hoverColor: "#DBC2CA",
       padding: "py-28",
       rotate: true,
+      shortTitle: "BKD",
+      cover: BookmarkedBookCover,
+      description: "Intelligent recommendations for all book lovers",
     },
     {
       name: "Portfolio",
@@ -31,6 +49,9 @@ export default function Books() {
       hoverColor: "#C1BBE1",
       padding: "py-20",
       rotate: true,
+      shortTitle: "PTFL",
+      cover: PortfolioBookCover,
+      description: "Check out the designs behind this website",
     },
     {
       name: "WINDLE",
@@ -38,6 +59,9 @@ export default function Books() {
       hoverColor: "#4D8ACC",
       padding: "py-20",
       rotate: true,
+      shortTitle: "WD",
+      cover: WindleBookCover,
+      description: "Forecast market movements using weather intelligence",
     },
   ];
 
