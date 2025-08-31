@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Drafted by Mercedes",
+  title: "Mercedes Xiong",
   description: "The benzfolio that has been created with hard work :)",
 };
 
