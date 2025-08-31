@@ -9,6 +9,7 @@ import PeechiGamesBookCover from "../../public/covers/PeechiGamesBookCover.png"
 import LiveliBookCover from "../../public/covers/LiveliBookCover.png"
 import { Book } from "lucide-react";
 import { Port_Lligat_Sans } from "next/font/google";
+import Image from "next/image";
 
 
 export default function Books() {
@@ -22,6 +23,7 @@ export default function Books() {
       shortTitle: "LVLI",
       cover: LiveliBookCover,
       description: "Your shared albums have now gone live",
+      color: "#000",
     },
     {
       name: "Peechi",
@@ -32,6 +34,7 @@ export default function Books() {
       shortTitle: "PCG",
       cover: PeechiGamesBookCover,
       description: "Netflix-inspired portal for ACM Peechi Games",
+      color: "#FFF",
     },
     {
       name: "Bookmarked",
@@ -42,6 +45,7 @@ export default function Books() {
       shortTitle: "BKD",
       cover: BookmarkedBookCover,
       description: "Intelligent recommendations for all book lovers",
+      color: "#FFF",
     },
     {
       name: "Portfolio",
@@ -52,6 +56,7 @@ export default function Books() {
       shortTitle: "PTFL",
       cover: PortfolioBookCover,
       description: "Check out the designs behind this website",
+      color: "#000",
     },
     {
       name: "WINDLE",
@@ -62,6 +67,7 @@ export default function Books() {
       shortTitle: "WD",
       cover: WindleBookCover,
       description: "Forecast market movements using weather intelligence",
+      color: "#FFF",
     },
   ];
 
@@ -84,8 +90,10 @@ export default function Books() {
                 className={`flex ${
                   project.rotate ? "items-end" : "items-center"
                 } justify-center rounded-lg shadow-2xl cursor-pointer transition-all duration-300 ease-in-out
-                  bg-white text-black group-hover:[color:${project.hoverColor}]
+                  bg-white text-black group-hover:flex-col group-hover:[color:${project.hoverColor}]
                   ${project.padding}
+                  group-hover:items-start
+                  p-6
                   w-[83px] h-[438px] hover:w-[296px] hover:scale-105`}
               >
                 <p
@@ -94,6 +102,20 @@ export default function Books() {
                 >
                   {project.name}
                 </p>
+                {project.rotate && (
+                  <div className="relative w-full flex-1 min-h-72">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.cover}
+                        alt={`${project.name} cover`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <h1 className="absolute hidden group-hover:block -top-4 text-8xl font-semi" style={{ color: project.color }}>{project.shortTitle}</h1>
+                    <h1 className="hidden group-hover:block text-sm font-semi w-full max-w-full whitespace-normal break-words text-pretty">{project.description}</h1>
+                  </div>
+                )}
               </div>
             </a>
           ))}

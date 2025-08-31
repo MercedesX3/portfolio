@@ -91,7 +91,7 @@ export default function Work() {
                 <Books/>
             </div>
 
-            <div className="mt-60 shadow-[0px_0px_20px_#C1BBE1]">
+            <div className="mt-20 shadow-[0px_0px_20px_#C1BBE1]">
                 <div className="flex h-[96px] w-full items-center justify-between px-14">
                 <p>@2025 Mercedes Xiong</p>
                 <div className="flex space-x-6">

@@ -131,7 +131,7 @@ export default function Home() {
 
         <div className="-mx-8 pl-4"> {/* Added pl-4 for some left padding */}
           <HorizontalScroller speed={2} startOffset={0.5} fontSize="responsive" className="text-black">
-            Designer & Front End Developer for Sage
+            Designer & Front End Developer @ ACM Dev
             <button 
             onClick={() => window.open("https://utdsage.com/", "_blank", "noopener,noreferrer")}
             className="flex flex-row items-center space-x-4 bg-black px-10 py-2 rounded-full text-white text-3xl shadow-[0px_0px_15px_#7AFFA6] hover:shadow-[0px_0px_15px_#00FF54] ">
@@ -226,10 +226,10 @@ export default function Home() {
                   image: Finterest, // uses your imported image
                   techStack: ["Expo", "React Native", "Express", "MongoDB"],
                   purpose:
-                    "Build a clean, fast reference for architectural terminology with delightful UX.",
+                    "Historically, finance education and the stock market have been completely male dominated. This has caused for the lack of support and resources for women to start or continue their investment in stocks. Alongside this, is the lack of confidence many women face in not knowing what exactly to invest and how to do it safely. That's why Finterest was created: a way to invest in your interests and make better financial decisions!",
                   date: "2024",
-                  challenges: "Navigation IA, fast search, and content modeling.",
-                  learnings: ["Design systems, incremental static regeneration.","Design systems, incremental static regeneration."],
+                  challenges: ["Deciding how to display a complex subject like stock investment in a way for people to easily understand", "Used plain language instead of legal jargon so users can easily navigate the application"],
+                  learnings: ["Improved understandings on how users may view financial subjects and how to display such subjects","Used trending mobile animations and interaction features to simplify user's experience with mobile application"],
                   githubUrl: "https://github.com/MercedesX3/Finterest",
                   photosForCarousel: [FinterestHeroPage, FinterestSignInPage, FinterestExplorePage, FinterestInterestPage]
                 })}
